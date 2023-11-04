@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -83,6 +83,36 @@ function InputForm(props: InputFormProps) {
   );
 }
 
+type PagesViewProps = ViewSettings & {
+  getBack: () => void;
+};
+
+function PagesGallery(props: PagesViewProps) {
+  const [currentPageIdx, setCurrentPageIdx] = useState(0);
+
+  setInterval(() => {
+    let index = currentPageIdx + 1;
+    if (index >= props.pages.length) {
+      index = 0;
+    }
+    setCurrentPageIdx(index);
+  }, props.interval_ms);
+
+  return (
+    <Stack spacing={2} sx={{ height: "100%" }}>
+      <div className="button" onClick={props.getBack}>
+        Get back
+      </div>
+
+      <iframe
+        src={props.pages[currentPageIdx].toString()}
+        className="page-iframe"
+        title="Current Page"
+      ></iframe>
+    </Stack>
+  );
+}
+
 function App() {
   const [stage, setStage] = useState<AppStage>("form");
 
@@ -100,11 +130,21 @@ function App() {
         }}
       />
     );
+  } else if (stage === "view") {
+    currentStageComponent = (
+      <PagesGallery
+        pages={pages}
+        interval_ms={interval}
+        getBack={() => setStage("form")}
+      />
+    );
   }
 
   return (
-    <div>
-      <Container>{currentStageComponent}</Container>
+    <div className="app">
+      <Container className="stages-container">
+        {currentStageComponent}
+      </Container>
       <div className="toast-container">
         <ToastContainer />
       </div>
