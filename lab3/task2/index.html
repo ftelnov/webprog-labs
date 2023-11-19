@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Feedback Report Form</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="page">
+      <form class="form" action="feedback.php" method="POST">
+        <h3 class="form__title">Feedback Report Form</h3>
+        <div class="form__field">
+          <label class="form__label form__label_required" for="last_name">
+            Last Name
+          </label>
+          <input class="form__input" id="last_name" name="last_name" required />
+        </div>
+        <div class="form__field">
+          <label class="form__label form__label_required" for="first_name">
+            First Name
+          </label>
+          <input
+            class="form__input"
+            id="first_name"
+            name="first_name"
+            required
+          />
+        </div>
+        <div class="form__field">
+          <label class="form__label form__label_required" for="email">
+            Email
+          </label>
+          <input
+            class="form__input"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="form__field">
+          <label class="form__label form__label_required" for="quality">
+            Rate the quality
+          </label>
+          <div class="form__radio-buttons">
+            <div class="form__radio-container">
+              <input
+                class="form__radio"
+                type="radio"
+                id="quality-1"
+                name="quality"
+                value="1"
+                required
+              />
+              <label for="quality-1">1</label>
+            </div>
+            <div class="form__radio-container">
+              <input
+                class="form__radio"
+                type="radio"
+                id="quality-2"
+                name="quality"
+                value="2"
+                required
+              />
+              <label for="quality-2">2</label>
+            </div>
+            <div class="form__radio-container">
+              <input
+                class="form__radio"
+                type="radio"
+                id="quality-3"
+                name="quality"
+                value="3"
+                required
+              />
+              <label for="quality-3">3</label>
+            </div>
+            <div class="form__radio-container">
+              <input
+                class="form__radio"
+                type="radio"
+                id="quality-4"
+                name="quality"
+                value="4"
+                required
+              />
+              <label for="quality-4">4</label>
+            </div>
+            <div class="form__radio-container">
+              <input
+                class="form__radio"
+                type="radio"
+                id="quality-5"
+                name="quality"
+                value="5"
+                required
+              />
+              <label for="quality-5">5</label>
+            </div>
+          </div>
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="like">
+            Rate what you liked mostly
+          </label>
+          <div class="form__checkbox-container">
+            <input
+              class="form__checkbox"
+              type="checkbox"
+              id="like-service-speed"
+              name="like-service-speed"
+            />
+            <label for="like-service-speed">Speed</label>
+          </div>
+          <div class="form__checkbox-container">
+            <input
+              class="form__checkbox"
+              type="checkbox"
+              id="like-interface"
+              name="like-interface"
+            />
+            <label for="like-interface">Interface</label>
+          </div>
+          <div class="form__checkbox-container">
+            <input
+              class="form__checkbox"
+              type="checkbox"
+              id="like-assortment"
+              name="like-assortment"
+            />
+            <label for="like-assortment">Assortment</label>
+          </div>
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="comment"
+            >Your comment(optional)</label
+          >
+          <textarea
+            class="form__textarea"
+            id="comment"
+            name="comment"
+            maxlength="255"
+          ></textarea>
+        </div>
+
+        <div class="form__comment">
+          Fields marked with <label class="form__label_required"></label>, are
+          required
+        </div>
+        <button class="form__button" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
