@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Thanks for feedback!</title>{% endblock %}
+{% block content %}
+    <div class="redirect-info">
+        <h3 class="redirect-info__title">Thanks for feedback!</h3>
+        <a class="redirect-info__link" href="{% url 'main' %}">To main page</a>
+    </div>
+{% endblock %}

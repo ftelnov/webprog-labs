@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>Leave a feedback</title>{% endblock %}
+{% block content %}
+    <form class="form" action="{% url 'feedback' %}" method="POST">
+        {% csrf_token %}
+        <h3 class="form__title">Leave a feedback</h3>
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import meta.views as views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.main, name="main"),
+    path('about', views.about_dev, name="about"),
+    path('feedback', views.feedback, name="feedback"),
 ]
